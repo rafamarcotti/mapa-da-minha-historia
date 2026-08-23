@@ -111,8 +111,11 @@ function renderResult(){
  $('matrix').querySelector('.protect-head').textContent=u.protect;
  $('collective').querySelector('strong').textContent=u.collective;
  $('reflection').querySelector('strong').textContent=u.reflection;
- $('collectiveText').textContent=state.answers.change||'—';
- $('reflectionText').textContent=state.answers.reflection||'—';
+ // As respostas das perguntas 7 e 8 alimentam diretamente os dois cartões finais.
+ const answer7=state.answers[questions[6].key]||'—';
+ const answer8=state.answers[questions[7].key]||'—';
+ $('collectiveText').textContent=answer7;
+ $('reflectionText').textContent=answer8;
  $('result').querySelector('h2').textContent=cTitle();
  window.scrollTo({top:0,behavior:'smooth'});
 }
